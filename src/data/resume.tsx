@@ -7,21 +7,18 @@ export const DATA = {
   url: "https://samratneupane.com.np",
   location: "Kathmandu, Nepal",
   locationLink: "https://www.google.com/maps/place/Kathmandu",
-  description:
-    "",
+  description: "",
   summary:
     "Hi there , I am Samrat Neupane. I am a Computer Engineering !! student who loves to write codes and I love travelling.",
   avatarUrl: "/samrat.jpg",
-  skills: [
-    "React",
-    "Next.js",
-    "Node.js",
-    "C++",
-    "Ruby on Rails",
-  ],
+  skills: ["React", "Next.js", "Node.js", "C++", "Ruby on Rails"],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "https://blog.samratneupane.com.np/", icon: NotebookIcon, label: "Blog" },
+    {
+      href: "https://blog.samratneupane.com.np/",
+      icon: NotebookIcon,
+      label: "Blog",
+    },
   ],
   contact: {
     email: "samratneupane.official@gmail.com",
@@ -48,7 +45,7 @@ export const DATA = {
 
         navbar: true,
       },
-      
+
       email: {
         name: "Send Email",
         url: "#",
@@ -68,18 +65,16 @@ export const DATA = {
       title: "FrontEnd Developer Intern",
       logoUrl: "/atomic.png",
       start: "October 2024",
-      end: "Current",
-      description:
-        "Working as an frontend developer intern",
+      end: "April 2025",
+      description: "Worked as an frontend developer intern",
     },
-    
   ],
-  
+
   projects: [
     {
       title: "Skillhunt",
       href: "https://skill-hunt.vercel.app/",
-   
+
       active: true,
       description:
         "Skillhunt is the platform which a company can create events and hire the freshers based on the perfomance on that event.Currently working on this project",
@@ -98,12 +93,11 @@ export const DATA = {
         },
       ],
       image: "/image.png",
-     
     },
     {
       title: "Ride Booking App",
       href: "https://gadibook.samratneupane.com.np/",
-   
+
       active: true,
       description:
         "Book rides in just simple click pay with the feasible payment method",
@@ -113,7 +107,7 @@ export const DATA = {
         "TailwindCSS",
         "Stripe",
         "Aceternity UI",
-        "MapBox Api"
+        "MapBox Api",
       ],
       links: [
         {
@@ -123,58 +117,47 @@ export const DATA = {
         },
       ],
       image: "/gadibook.png",
-     
     },
 
     {
-      title: "Coding Funda",
+      title: "EV Chargers Website with Custom Admin Panel",
       href: "https://codingfunda.samratneupane.com.np/",
-   
+
       active: true,
       description:
-        "Landing page for the course selling website",
+        "Ev chargers selling websit with custom admin panel to add and update the prducts",
       technologies: [
         "Next.js",
         "TailwindCSS",
-        "Aceternity UI",
+        "Shadcn",
+        "Mongodb",
+        "Next auth",
       ],
       links: [
         {
           type: "Website",
-          href: "https://codingfunda.samratneupane.com.np/",
+          href: "https://ev.samratneupane.com.np/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/coding.png",
-     
+      image: "/evchargers.png",
     },
 
     {
-      title: "Blog website",
-      href: "https://blog.samratneupane.com.np/",
-   
+      title: "Movie Saving website",
+      href: "https://moviewebsite.samratneupane.com.np/",
+
       active: true,
-      description:
-        "Blog website",
-      technologies: [
-        "Next.js",
-        "TailwindCSS",
-        "Mongodb",
-        "Next Auth",
-        "Firebase"
-      ],
+      description: "Save the movies that you want to watch so you won't forget",
+      technologies: ["Next.js", "TailwindCSS"],
       links: [
         {
           type: "Website",
-          href: "https://blog.samratneupane.com.np/",
+          href: "https://moviewebsite.samratneupane.com.np/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/bloging.png",
-     
+      image: "/movie.png",
     },
-
-  
   ],
-  
 } as const;
