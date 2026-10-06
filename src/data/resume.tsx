@@ -134,7 +134,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://chromapick.click",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/chromapick.jpg",
@@ -150,7 +150,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://sodham.com",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/sodham.jpg",
@@ -166,7 +166,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://skillhunt.vercel.app",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/skillhunt.jpg",
@@ -182,7 +182,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://remotejobnepal.com",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/remotejobnepal.jpg",
@@ -197,7 +197,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://upkraft.ai",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/upkraft.jpg",
@@ -213,7 +213,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://onlinebouquetmaker.com",
-          icon: Icons.globe,
+          icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/projects/bouquet.jpg",
