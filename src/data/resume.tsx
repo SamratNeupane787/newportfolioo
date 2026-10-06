@@ -77,6 +77,7 @@ export const DATA = {
       title: "SEO Specialist & Full-Stack Developer",
       logoUrl: "",
       start: "March 2024",
+      end: "Present",
       description:
         "Took a client ecommerce site from near-zero visibility to 265K Google Search impressions and 6.76K clicks in 8 months (avg. position 8.2) by rebuilding on-page SEO, technical structure, and content. Run a recurring SEO content calendar and reporting system across two client accounts, write long-form SEO content structured for both traditional search and AI answer engines (ChatGPT, Perplexity, Gemini), and deliver technical SEO audits and campaign strategies for ecommerce and hospitality clients.",
     },
