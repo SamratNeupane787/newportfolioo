@@ -33,7 +33,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     {
-      href: "https://blog.samratneupane.com.np/",
+      href: "/blog",
       icon: NotebookIcon,
       label: "Blog",
     },
