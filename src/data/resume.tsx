@@ -7,11 +7,29 @@ export const DATA = {
   url: "https://samratneupane.com.np",
   location: "Kathmandu, Nepal",
   locationLink: "https://www.google.com/maps/place/Kathmandu",
-  description: "",
+  description:
+    "SEO Specialist & Full-Stack Developer. I turn search into revenue and ideas into shipped products.",
   summary:
-    "Hi there , I am Samrat Neupane. I am a Computer Engineering !! student who loves to write codes and I love travelling.",
+    "I'm Samrat Neupane, a Computer Engineering graduate (2026) from Kathmandu. I work as an SEO Specialist & Full-Stack Developer at Griffity Studios, where I took a client ecommerce site from near-zero visibility to **265K Google Search impressions** and **6.76K clicks in 8 months**. I also build full-stack products end to end — from an expert-booking platform with Khalti and FonePay payments to a Chrome extension that pulls a website's design tokens straight into Figma.",
   avatarUrl: "/samrat.jpg",
-  skills: ["React", "Next.js", "Node.js", "C++", "Ruby on Rails"],
+  skills: [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Vue.js",
+    "NestJS",
+    "PostgreSQL",
+    "TypeORM",
+    "TailwindCSS",
+    "SEO",
+    "Google Search Console",
+    "GA4",
+    "Ahrefs",
+    "Semrush",
+    "Technical SEO",
+    "Schema Markup",
+  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     {
@@ -28,136 +46,176 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/SamratNeupane787",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/samrat-neupane-36394b213/",
+        url: "https://www.linkedin.com/in/samrat-neupane",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       X: {
         name: "X",
         url: "https://x.com/samratneupane6",
         icon: Icons.x,
-
         navbar: true,
       },
-
       email: {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
-
         navbar: false,
       },
     },
   },
-
   work: [
+    {
+      company: "Griffity Studios",
+      href: "#",
+      badges: [],
+      location: "Lalitpur, Nepal",
+      title: "SEO Specialist & Full-Stack Developer",
+      logoUrl: "",
+      start: "March 2024",
+      description:
+        "Took a client ecommerce site from near-zero visibility to 265K Google Search impressions and 6.76K clicks in 8 months (avg. position 8.2) by rebuilding on-page SEO, technical structure, and content. Run a recurring SEO content calendar and reporting system across two client accounts, write long-form SEO content structured for both traditional search and AI answer engines (ChatGPT, Perplexity, Gemini), and deliver technical SEO audits and campaign strategies for ecommerce and hospitality clients.",
+    },
+    {
+      company: "Bookedhere.com & Schoolbitez.com",
+      href: "https://bookedhere.com",
+      badges: [],
+      location: "Remote",
+      title: "Frontend Developer (Part-Time)",
+      logoUrl: "",
+      start: "August 2025",
+      end: "April 2026",
+      description:
+        "Redesigned the user onboarding flow, date-selector component, and business profile page layouts in Next.js, improving usability across the booking journey.",
+    },
     {
       company: "Aruna Software",
       href: "https://aruna.software",
       badges: [],
       location: "Remote",
-      title: "FrontEnd Developer Intern",
-      logoUrl: "/atomic.png",
+      title: "Frontend Developer Intern (Part-Time)",
+      logoUrl: "",
       start: "October 2024",
       end: "April 2025",
-      description: "Worked as an frontend developer intern",
+      description:
+        "Redesigned the user onboarding flow, date-selector component, and business profile page layouts in Vue.js as part of a small development team.",
     },
   ],
-
+  education: [
+    {
+      school: "Advanced College of Engineering and Management",
+      href: "https://acem.edu.np",
+      degree: "Bachelor's Degree, Computer Engineering",
+      logoUrl: "",
+      start: "2022",
+      end: "2026",
+    },
+  ],
   projects: [
     {
-      title: "Skillhunt",
-      href: "https://skill-hunt.vercel.app/",
-
+      title: "ChromaPick",
+      href: "https://chromapick.click",
       active: true,
       description:
-        "Skillhunt is the platform which a company can create events and hire the freshers based on the perfomance on that event.Currently working on this project",
+        "Chrome extension that extracts true brand colors, gradients, and typography from any website's computed styles — then exports them as Figma Variables, design tokens JSON, Tailwind config, and CSS variables. Free tier with a $10 lifetime Pro.",
       technologies: [
+        "TypeScript",
+        "Chrome Extension",
         "Next.js",
-        "NextAuth",
-        "TailwindCSS",
-        "Mongodb",
-        "Aceternity UI",
+        "Supabase",
+        "Dodo Payments",
       ],
       links: [
         {
           type: "Website",
-          href: "https://skill-hunt.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
+          href: "https://chromapick.click",
+          icon: Icons.globe,
         },
       ],
-      image: "/image.png",
+      image: "/projects/chromapick.jpg",
     },
     {
-      title: "Ride Booking App",
-      href: "https://gadibook.samratneupane.com.np/",
-
+      title: "Sodham",
+      href: "https://sodham.com",
       active: true,
       description:
-        "Book rides in just simple click pay with the feasible payment method",
-      technologies: [
-        "Next.js",
-        "Clerk",
-        "TailwindCSS",
-        "Stripe",
-        "Aceternity UI",
-        "MapBox Api",
-      ],
+        "1-on-1 expert-booking platform for the Nepal market, built end to end: authentication, profiles, service listings, booking and payment flows (Khalti, FonePay), and calendar sync.",
+      technologies: ["Next.js 14", "NestJS", "TypeORM", "PostgreSQL"],
       links: [
         {
           type: "Website",
-          href: "https://gadibook.samratneupane.com.np/",
-          icon: <Icons.globe className="size-3" />,
+          href: "https://sodham.com",
+          icon: Icons.globe,
         },
       ],
-      image: "/gadibook.png",
+      image: "/projects/sodham.jpg",
     },
-
     {
-      title: "EV Chargers Website with Custom Admin Panel",
-      href: "https://codingfunda.samratneupane.com.np/",
-
+      title: "SkillHunt",
+      href: "https://skillhunt.vercel.app",
       active: true,
       description:
-        "Ev chargers selling websit with custom admin panel to add and update the prducts",
-      technologies: [
-        "Next.js",
-        "TailwindCSS",
-        "Shadcn",
-        "Mongodb",
-        "Next auth",
-      ],
+        "Hackathon-launching platform where companies create events and hire freshers based on their event performance.",
+      technologies: ["Next.js", "NextAuth", "TailwindCSS", "MongoDB"],
       links: [
         {
           type: "Website",
-          href: "https://ev.samratneupane.com.np/",
-          icon: <Icons.globe className="size-3" />,
+          href: "https://skillhunt.vercel.app",
+          icon: Icons.globe,
         },
       ],
-      image: "/evchargers.png",
+      image: "/projects/skillhunt.jpg",
     },
-
     {
-      title: "Movie Saving website",
-      href: "https://moviewebsite.samratneupane.com.np/",
-
+      title: "RemoteJobNepal",
+      href: "https://remotejobnepal.com",
       active: true,
-      description: "Save the movies that you want to watch so you won't forget",
-      technologies: ["Next.js", "TailwindCSS"],
+      description:
+        "Frontend for a remote-jobs listing platform targeting the Nepal market.",
+      technologies: ["React", "Next.js", "TailwindCSS"],
       links: [
         {
           type: "Website",
-          href: "https://moviewebsite.samratneupane.com.np/",
-          icon: <Icons.globe className="size-3" />,
+          href: "https://remotejobnepal.com",
+          icon: Icons.globe,
         },
       ],
-      image: "/movie.png",
+      image: "/projects/remotejobnepal.jpg",
+    },
+    {
+      title: "Upkraft.ai",
+      href: "https://upkraft.ai",
+      active: true,
+      description: "Frontend for an AI-focused SaaS product.",
+      technologies: ["React", "Next.js", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://upkraft.ai",
+          icon: Icons.globe,
+        },
+      ],
+      image: "/projects/upkraft.jpg",
+    },
+    {
+      title: "Online Bouquet Maker",
+      href: "https://onlinebouquetmaker.com",
+      active: true,
+      description:
+        "Free virtual bouquet designer: arrange hand-drawn flowers, pick wrapping and ribbon, then share an animated reveal link or export a PNG to send to someone you love.",
+      technologies: ["JavaScript", "SVG", "Canvas"],
+      links: [
+        {
+          type: "Website",
+          href: "https://onlinebouquetmaker.com",
+          icon: Icons.globe,
+        },
+      ],
+      image: "/projects/bouquet.jpg",
     },
   ],
 } as const;
