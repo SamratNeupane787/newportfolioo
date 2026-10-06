@@ -1,6 +1,6 @@
 "use server";
 
-import { SignJWT, jwtVerify } from "jose";
+import { createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { markdownToHTML } from "@/data/blog";
@@ -9,10 +9,54 @@ const COOKIE_NAME = "portfolio_admin_session";
 const OWNER = "SamratNeupane787";
 const REPO = "newportfolioo";
 
-function getSecret(): Uint8Array {
+function getSecret(): string {
   const s = process.env.ADMIN_PASSWORD;
   if (!s) throw new Error("ADMIN_PASSWORD env var is not set");
-  return new TextEncoder().encode(s);
+  return s;
+}
+
+function b64url(input: string | Buffer): string {
+  return Buffer.from(input).toString("base64url");
+}
+
+function signJwt(
+  payload: Record<string, unknown>,
+  secret: string,
+  expiresInSec: number
+): string {
+  const now = Math.floor(Date.now() / 1000);
+  const header = b64url(JSON.stringify({ alg: "HS256", typ: "JWT" }));
+  const body = b64url(
+    JSON.stringify({ ...payload, iat: now, exp: now + expiresInSec })
+  );
+  const sig = createHmac("sha256", secret)
+    .update(`${header}.${body}`)
+    .digest("base64url");
+  return `${header}.${body}.${sig}`;
+}
+
+function verifyJwt(token: string, secret: string): boolean {
+  const parts = token.split(".");
+  if (parts.length !== 3) return false;
+  const [header, body, sig] = parts;
+  const expected = createHmac("sha256", secret)
+    .update(`${header}.${body}`)
+    .digest("base64url");
+  const a = Buffer.from(sig, "utf8");
+  const b = Buffer.from(expected, "utf8");
+  if (a.length !== b.length) return false;
+  try {
+    if (!timingSafeEqual(a, b)) return false;
+    const payload = JSON.parse(
+      Buffer.from(body, "base64url").toString("utf-8")
+    );
+    return (
+      typeof payload.exp === "number" &&
+      payload.exp > Math.floor(Date.now() / 1000)
+    );
+  } catch {
+    return false;
+  }
 }
 
 function getToken(): string {
@@ -42,12 +86,7 @@ async function gh(path: string, init?: RequestInit): Promise<any> {
 export async function isAuthed(): Promise<boolean> {
   const c = cookies().get(COOKIE_NAME)?.value;
   if (!c) return false;
-  try {
-    await jwtVerify(c, getSecret());
-    return true;
-  } catch {
-    return false;
-  }
+  return verifyJwt(c, getSecret());
 }
 
 async function requireAuth(): Promise<void> {
@@ -63,11 +102,7 @@ export async function loginAction(formData: FormData): Promise<void> {
   ) {
     redirect("/admin?error=1");
   }
-  const token = await new SignJWT({ admin: true })
-    .setProtectedHeader({ alg: "HS256" })
-    .setIssuedAt()
-    .setExpirationTime("30d")
-    .sign(getSecret());
+  const token = signJwt({ admin: true }, getSecret(), 60 * 60 * 24 * 30);
   cookies().set(COOKIE_NAME, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
