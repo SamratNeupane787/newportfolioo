@@ -12,13 +12,39 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Samrat Neupane",
+  jobTitle: "SEO Specialist & Full-Stack Developer",
+  url: "https://www.samratneupane.com.np",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kathmandu",
+    addressCountry: "Nepal",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Griffity Studios",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/samrat-neupane",
+    "https://x.com/samratneupane6",
+    "https://github.com/SamratNeupane787",
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.url),
+  metadataBase: new URL("https://www.samratneupane.com.np"),
   title: {
-    default: DATA.name,
+    default: "Samrat Neupane | SEO Expert in Nepal & Full-Stack Developer",
     template: `%s | ${DATA.name}`,
   },
-  description: DATA.description,
+  description:
+    "SEO expert in Nepal based in Kathmandu. Samrat Neupane grew a client ecommerce site to 265K Google Search impressions in 8 months.",
+  alternates: {
+    canonical: "https://www.samratneupane.com.np/",
+  },
   openGraph: {
     title: `${DATA.name}`,
     description: DATA.description,
@@ -61,6 +87,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}
