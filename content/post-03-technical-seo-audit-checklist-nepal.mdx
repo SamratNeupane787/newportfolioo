@@ -1,0 +1,152 @@
+---
+title: "Technical SEO Audit Checklist for Nepali Websites"
+publishedAt: "2026-10-29"
+summary: "A practical technical SEO audit checklist for Nepali websites: crawlability, speed, mobile, structured data, and the fixes to prioritise first."
+---
+
+## The short answer
+
+If your Nepali website is not ranking, the problem is often technical before it is anything else. A technical SEO audit checks whether Google can find, read, and trust your pages — and whether visitors on Nepali mobile networks can actually use them. Run through this checklist, fix the high-priority items first, and you will usually see movement before you spend anything on new content.
+
+This guide is for Nepali business owners, developers, and marketers who run a website and want a clear, do-it-yourself audit process. It is **not** for people looking for a magic tool that fixes everything automatically, or for sites that have no content worth ranking in the first place. Technical SEO makes good content findable; it cannot rescue empty pages.
+
+## TL;DR
+
+- **Crawlability comes first.** If Google cannot reach a page, nothing else about that page matters.
+- **Speed is a ranking factor and a business factor.** Slow pages lose visitors before they lose rankings.
+- **Mobile is the default in Nepal.** Audit on a phone, not on your office desktop.
+- **Fix in priority order:** blocking errors first, then speed, then structure, then polish.
+- **Re-audit after every fix.** An audit is a loop, not a one-time report.
+
+## Who this is best for
+
+- Small and mid-sized businesses in Nepal with a live website that is underperforming in search
+- Developers and marketers asked to "do SEO" on a site they did not build
+- Business owners comparing SEO providers who want to know what a real audit covers
+- Anyone about to redesign or rebuild a website — audit first, so the rebuild fixes real problems
+
+## Who it is NOT for
+
+- Brand-new sites with no pages indexed yet — set up Search Console and publish useful content first
+- Businesses whose real problem is no demand, no offer, or no website at all
+- Anyone who wants a fully automated fix — tools find problems, people fix them
+
+## Step 1: Can Google find and crawl your site?
+
+Start in Google Search Console. It is free, and it tells you what Google actually sees — not what you hope it sees.
+
+- **Coverage report:** look for pages marked "not indexed" and read the reason. "Discovered, currently not indexed" often means thin or duplicate content. "Crawled, currently not indexed" means Google visited and chose not to keep the page — usually a quality signal.
+- **Robots.txt:** check that you are not accidentally blocking important pages. A single misplaced `Disallow: /` has killed more rankings than any algorithm update.
+- **Sitemap:** submit an accurate sitemap and make sure it only lists pages you want ranked — not admin pages, tag archives, or test pages.
+- **Internal links:** every important page should be reachable by clicking from your homepage within a few steps. Pages with no internal links are nearly invisible to Google.
+
+If Google cannot crawl a page, stop here and fix that before anything else.
+
+## Step 2: Is your site fast enough on real connections?
+
+Speed matters everywhere, but it matters more in Nepal, where many visitors browse on mobile data with variable speeds. Test with PageSpeed Insights and WebPageTest, and test on a mid-range phone, not a fast office connection.
+
+| Check | What good looks like | Common fix |
+|---|---|---|
+| Largest Contentful Paint | Main content visible quickly | Compress images, use modern formats, reduce heavy scripts |
+| Interaction delay | Page responds promptly to taps | Remove unused JavaScript, defer non-critical scripts |
+| Layout shift | Page does not jump while loading | Set width and height on images and embeds |
+| Image weight | Images sized for the screen showing them | Resize and compress; never serve a 4000px photo to a phone |
+| Hosting | Server responds quickly | Check your host; slow shared hosting caps everything else |
+
+You do not need a perfect score. You need pages that load fast enough that visitors stay. Fix the worst offenders first — usually oversized images and unused scripts.
+
+## Step 3: Does it work properly on mobile?
+
+Most of your visitors will meet your site on a phone. Audit the same way they experience it.
+
+- **Responsive layout:** no horizontal scrolling, no text too small to read, no buttons too close together to tap.
+- **Touch targets:** links and buttons should be easy to tap with a thumb, not just clickable with a precise mouse.
+- **Popups and banners:** anything covering the content on a small screen costs you visitors and can cost you rankings.
+- **Mobile parity:** Google primarily uses your mobile version for ranking. If your mobile site hides content that your desktop site shows, Google largely ignores the hidden content.
+
+## Step 4: Is your content structured for search?
+
+- **One clear title per page:** every page needs a unique, descriptive title that matches what someone would search for.
+- **Headings in order:** one H1 per page, then H2s and H3s that outline the content. Headings are how Google understands what a page is about.
+- **Meta descriptions:** write a short, honest summary for each important page. They do not directly rank you, but they decide whether searchers click.
+- **Duplicate content:** check for the same content reachable at multiple URLs (www vs non-www, trailing slashes, print versions). Pick one canonical version and redirect the rest.
+- **Broken links:** crawl for 404s, both internal and outbound. Fix or redirect them — broken links waste crawl budget and frustrate visitors.
+
+## Step 5: Structured data and local signals
+
+- **Schema markup:** add appropriate structured data — LocalBusiness for a business, Product for ecommerce, FAQPage for FAQ sections. It helps Google understand your pages and can earn richer search results.
+- **NAP consistency:** your name, address, and phone number should match exactly across your website, your Google Business Profile, and other listings. Inconsistency confuses Google and customers alike.
+- **HTTPS:** your whole site should run over HTTPS. Mixed content warnings and insecure pages erode trust and rankings.
+
+## Prioritising the fixes
+
+Not everything in an audit matters equally. Work in this order:
+
+1. **Blocking errors:** pages Google cannot crawl, accidental robots blocks, server errors.
+2. **Speed and mobile failures:** pages visitors abandon.
+3. **Index and duplication problems:** pages competing with themselves.
+4. **Structure and schema:** improvements that help Google understand and display you better.
+5. **Polish:** minor issues that matter only once the big ones are fixed.
+
+Write down what you fixed and when. SEO improvements are only provable if you can connect a change to a result in Search Console afterwards.
+
+## The approach that actually gets results
+
+Tools will hand you a long list of issues. The skill is knowing which ones matter for your site, in your market. That is the approach I use:
+
+- **Measurement first.** Baseline your traffic, rankings, and Core Web Vitals before changing anything, so progress is provable.
+- **Developer and SEO in one person.** Many audit findings are website problems — slow templates, broken mobile layouts, crawl traps. A provider who can also fix websites ships the fix instead of writing a recommendation that waits weeks for someone else.
+- **No spammy shortcuts.** Audit fixes are honest work: real speed, real structure, real content. Tricks that inflate a score without helping visitors eventually backfire.
+
+For context on what honest, measurement-first work produces: on one client ecommerce site, I helped grow search visibility from near-zero to **265,000 Google Search impressions and 6,760 clicks in 8 months**, with an average position of 8.2 — starting from technical fixes and content that answered real customer searches.
+
+## Honest tradeoffs
+
+- **An audit finds problems; it does not fix them.** Budget time or money for the fixes, not just the report.
+- **Some fixes need a developer.** Template and hosting problems cannot be solved from a marketing dashboard.
+- **Results take time to show.** Google must re-crawl your fixed pages, which takes days to weeks, and rankings move after that.
+- **A perfect audit score is not the goal.** A fast, crawlable site with useful content beats a site with a perfect tool score and nothing worth reading.
+
+## FAQs
+
+### How often should I audit my website?
+
+A full audit every 6–12 months is sensible for most small businesses, plus a quick check after any redesign, migration, or major template change. Search Console deserves a look monthly — it surfaces new problems early, before they cost you traffic.
+
+### Can I do a technical SEO audit myself?
+
+Yes, for the basics. Search Console, PageSpeed Insights, and a free crawler will find most common problems, and this checklist tells you what to look for. Hire help when the fixes need development work, when the site is large, or when you need someone to prioritise a long list of issues by business impact.
+
+### What is the single most common technical problem on Nepali websites?
+
+Oversized, uncompressed images on slow mobile connections, followed closely by pages Google cannot crawl because of template or robots mistakes. Both are cheap to fix and both cost real visitors every day they remain.
+
+### Do I need paid tools for an audit?
+
+Not to start. Google Search Console, PageSpeed Insights, and the free tiers of crawling tools cover most small sites. Paid tools help when you manage many pages or need ongoing monitoring — buy them when the free tools stop answering your questions, not before.
+
+### Will fixing technical issues alone get me to page one?
+
+Rarely. Technical SEO removes the barriers stopping you from ranking. To actually rank, you also need content that answers searches better than competitors and, over time, genuine mentions and links. Think of it as fixing the road before worrying about how fast the car goes.
+
+### Should I fix everything the audit tool flags?
+
+No. Tools flag many minor issues that barely matter. Fix blocking errors, speed, mobile, and duplication first. Treat the rest as a backlog to work through after the big wins are shipped.
+
+### How do I know if the fixes worked?
+
+Watch Search Console: indexed pages should rise, errors should fall, and Core Web Vitals should improve. Then watch traffic and enquiries over the following weeks. If a fix shows no movement after a re-crawl, it was not the bottleneck — move to the next item.
+
+## Final recommendation
+
+Run this audit on your own site this week. Start with Search Console coverage, then speed on a real phone, then mobile usability. Fix blocking errors first, speed second, structure third. Re-check after each round of fixes.
+
+If you would rather have someone run the audit and ship the fixes, [see my SEO services](/seo-expert-in-nepal) or reach out through the contact links on the [homepage](/). For judging any SEO offer you receive, read my guide on [SEO services in Nepal: what you actually get and what to ask before paying](/blog/seo-services-in-nepal-what-you-get) and [how to choose the right SEO expert in Nepal](/blog/how-to-choose-seo-expert-in-nepal).
+
+## Bottom line
+
+- **Best first step:** Search Console coverage and a mobile speed test
+- **Main advantage:** removing ranking barriers before spending on content
+- **Biggest differentiator:** fixes shipped by someone who can also build websites
+- **Final recommendation:** audit, fix in priority order, re-measure — then repeat
