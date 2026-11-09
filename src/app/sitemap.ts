@@ -1,10 +1,21 @@
 import type { MetadataRoute } from "next";
+import { getBlogPosts } from "@/data/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.samratneupane.com.np";
+const baseUrl = "https://www.samratneupane.com.np";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getBlogPosts();
+
+  const blogUrls: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.metadata.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     {
-      url: `${baseUrl}/`,
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
@@ -21,5 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...blogUrls,
   ];
 }
