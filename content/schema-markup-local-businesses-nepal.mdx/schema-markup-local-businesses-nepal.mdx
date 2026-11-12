@@ -1,0 +1,199 @@
+---
+title: "Schema Markup for Local Businesses in Nepal: A Practical Guide"
+publishedAt: "2026-11-12"
+summary: "Schema markup tells Google what your Nepali business does, where it is, and when it opens — so you show up better in local search. A copy-ready guide."
+---
+
+# Schema Markup for Local Businesses in Nepal: A Practical Guide
+
+If you run a clinic in Pokhara, a restaurant in Thamel, or a hotel in Chitwan, your website already tells visitors what you do. The problem is that Google does not read your website the way a person does. Schema markup is the fix: a small block of code that translates your business details into a format Google understands directly. It takes an afternoon to add, costs nothing, and it is one of the few technical SEO tasks where a small Nepali business can match — or beat — a much bigger competitor.
+
+This guide is for Nepali business owners and the people who build their websites. It is **not** for developers building large ecommerce platforms or marketplaces — those need a different, much larger schema setup. Here, we focus on the single-location local business: the clinic, restaurant, hotel, salon, dental practice, law office, or shop that serves customers in one city.
+
+## TL;DR
+
+- **Schema markup (structured data)** is code on your website that labels your business name, type, address, phone, hours, services, and reviews in a format Google can read with certainty.
+- The format to use is **JSON-LD**, placed in the `<head>` of your homepage. Google recommends it, and it is the easiest to add and maintain.
+- The most useful type for most Nepali businesses is **LocalBusiness**, or one of its specific subtypes like `Restaurant`, `Hotel`, `Dentist`, `MedicalClinic`, or `ProfessionalService`.
+- It does **not** guarantee rich results or a higher ranking. What it does is remove ambiguity: Google no longer has to guess your opening hours or which "Himalaya Restaurant" you are.
+- **Never mark up information that is not visible on the page.** Fake reviews, wrong hours, or hidden content can get your rich results removed.
+- Validate with Google's Rich Results Test before you publish, and re-check whenever your hours, phone number, or services change.
+
+## Who this is best for
+
+- **Single-location local businesses** — a restaurant, clinic, hotel, salon, or shop in Kathmandu, Pokhara, Lalitpur, or any Nepali city. One LocalBusiness block on the homepage covers most of what you need.
+- **Businesses that already have a Google Business Profile.** Schema and your GBP work together: the profile is what shows on Maps, and schema is what confirms the same facts on your own website. If you have not set up your profile yet, start with my guide to [local SEO for Kathmandu businesses](/blog/local-seo-kathmandu-google-business-profile) first.
+- **Businesses with reviews, a menu, or bookable services.** Reviews, menus, and opening hours are the details most likely to appear as rich results in search — and they are exactly what customers look for before choosing you.
+- **Website owners doing a technical cleanup.** Schema belongs on the same checklist as fixing broken links and speeding up the site. See the full [technical SEO audit checklist for Nepali websites](/blog/technical-seo-audit-checklist-nepal).
+
+## Who this is NOT for
+
+- **Businesses without a real website.** Schema lives on your website. If your only online presence is a Facebook page, set up a simple website first — even a one-page site is enough to carry the markup.
+- **Businesses that want instant rankings.** Schema is a clarity tool, not a ranking shortcut. If your site has thin content, no reviews, and no local links, schema alone will not move you. Fix the fundamentals first.
+- **Online-only businesses with no physical location.** If you serve all of Nepal from a laptop with no address customers can visit, a LocalBusiness block with a made-up address will hurt you. Use `Organization` schema instead, and skip the address fields.
+
+## What schema markup actually does
+
+Think of your website as a conversation. A visitor reads "Open 10 AM – 8 PM, Sunday closed" and understands it instantly. Google reads the same sentence and has to guess: is that the opening time, or a line from a blog post? Is "Sunday closed" still true this month? Schema removes the guessing. You label each fact — `"openingHours": "Mo-Sa 10:00-20:00"` — and Google takes it as a structured fact, not a sentence to interpret.
+
+That certainty is what powers the extra details you see in search results: star ratings under a listing, opening hours, price ranges, and "book a table" or "call now" buttons. Google calls these **rich results**. They do not appear for every site, and Google decides when to show them, but a site without schema is not even in the running.
+
+There is a second benefit that matters more for Nepali businesses: **disambiguation**. There are many businesses in Nepal with similar or identical names — several "Everest" hotels, several "Himalaya" restaurants. Schema tells Google which one your website belongs to, what type of business it is, and where exactly it sits. That is the difference between Google showing your hotel for "hotel near Lakeside Pokhara" and showing a different hotel with the same name.
+
+## The schema types that matter for Nepali businesses
+
+Not all schema is equal. A local business needs a small set of types, and most of the value comes from the first one. Start there and add the rest only if they genuinely apply.
+
+| Schema type | What it covers | Who should use it |
+|---|---|---|
+| **LocalBusiness** | Name, address, phone, hours, services, area served | Every local business — the starting point |
+| **Restaurant** | Menu, cuisines served, price range, accepts reservations | Restaurants, cafes, bakeries |
+| **Hotel** | Rooms, amenities, check-in times, star rating | Hotels, lodges, guesthouses, homestays |
+| **Dentist / MedicalClinic / Physician** | Medical specialty, services, accepted insurance | Clinics, dental practices, hospitals |
+| **ProfessionalService** | Services offered, areas served | Law firms, accountants, consultancies, agencies |
+| **FAQPage** | Questions and answers on a page | Any page with a genuine FAQ section |
+| **Review / AggregateRating** | Genuine customer reviews and average rating | Businesses with real, verifiable reviews |
+| **BreadcrumbList** | The page hierarchy (Home > Services > Teeth Whitening) | Any site with more than a few pages |
+
+A common mistake is picking the generic `LocalBusiness` when a more specific type exists. If you run a restaurant, use `Restaurant` — Google understands it better, and it unlocks restaurant-specific features like menu display. The same goes for hotels and clinics. The specific type inherits everything from LocalBusiness and adds fields of its own.
+
+Another mistake is the opposite: marking up things that are not true. A `Review` block must reflect real reviews from real customers, shown on your site. A `priceRange` of "$$" should match what a customer actually pays. Google's spam policies are clear here, and getting rich results removed is worse than never having them.
+
+## A copy-ready example for a Kathmandu restaurant
+
+Below is a complete JSON-LD block for a fictional restaurant in Thamel. Replace every value with your own real details — do not publish it with the example values still in it. The block goes in the `<head>` of your homepage, inside a `<script type="application/ld+json">` tag.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Himalayan Kitchen",
+  "image": "https://www.yourwebsite.com/images/restaurant.jpg",
+  "servesCuisine": ["Nepali", "Indian", "Continental"],
+  "priceRange": "$$",
+  "telephone": "+977-1-4440000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Thamel Marg",
+    "addressLocality": "Kathmandu",
+    "addressRegion": "Bagmati",
+    "postalCode": "44600",
+    "addressCountry": "NP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 27.7172,
+    "longitude": 85.3240
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "21:00"
+    }
+  ],
+  "acceptsReservations": "True",
+  "url": "https://www.yourwebsite.com",
+  "menu": "https://www.yourwebsite.com/menu"
+}
+```
+
+A few details worth getting right:
+
+- **Use the same name, address, and phone number (NAP) everywhere** — on your website, your Google Business Profile, and your schema. Inconsistent details across the web are one of the most common reasons Google distrusts a local listing. If your profile says "01-4440000" and your site says "+977-1-4440000", pick one format and use it consistently.
+- **Postal codes matter.** Kathmandu is 44600, Pokhara is 33700, Lalitpur is 44700. Use the real code for your area; it helps Google place you on the map correctly.
+- **Use `geo` coordinates from Google Maps.** Right-click your exact location on Google Maps, copy the coordinates, and paste them in. A wrong pin is worse than no pin.
+- **Match your real hours.** If you close on Saturdays, say so. The most damaging schema error for a local business is hours that tell Google you are open when your door is locked.
+
+For a clinic, swap `"@type": "Restaurant"` for `"@type": "MedicalClinic"` and replace `servesCuisine` and `menu` with the services you offer. For a hotel, use `"@type": "Hotel"` and add check-in and check-out times. The structure stays the same.
+
+## How to add schema to your website
+
+**If your site is built with a modern framework (Next.js, WordPress, or similar):** add the JSON-LD block to the `<head>` of your homepage template. In Next.js, that means the layout or page component; in WordPress, a plugin like Rank Math or Yoast can generate LocalBusiness schema automatically — but check what it generates, because plugins often fill in generic values that need correcting.
+
+**If your site was built by an agency or freelancer:** ask them to add it. It is a small job — a competent developer can add a LocalBusiness block in under an hour. If they quote you a large fee for it, get a second opinion.
+
+**If you built the site yourself with a website builder:** check whether the builder supports custom code in the header. Many do. If yours does not, adding schema may not be possible without moving to a platform that allows it — one more reason to own a website you control, rather than renting space on a platform that limits you.
+
+After adding it, test before you celebrate. Paste your homepage URL into [Google's Rich Results Test](https://search.google.com/test/rich-results) and confirm the markup is detected with no errors. Fix any warnings the tool flags — a warning is not fatal, but an error means Google will ignore that part of your markup.
+
+## What schema can and cannot do
+
+Be honest about the limits. Schema is one of the cheapest, highest-value technical tasks a Nepali business can do, but it is not magic.
+
+**What it can do:**
+
+- Make your business eligible for rich results — star ratings, hours, price range, and booking actions in search.
+- Remove ambiguity about who you are, where you are, and what you offer.
+- Strengthen the match between your website and your Google Business Profile, which supports your local rankings.
+- Help voice assistants and AI search tools answer questions about your business accurately.
+
+**What it cannot do:**
+
+- Guarantee rich results. Google decides when to show them, and many eligible pages never get them.
+- Replace reviews, content, or links. A restaurant with no reviews and a one-page website will not outrank a reviewed, well-linked competitor because it added schema.
+- Fix wrong information. Schema that contradicts your Google Business Profile or your visible website content creates confusion, not trust.
+- Work if it is invisible. Every fact in your markup should also appear somewhere on the page a visitor can see.
+
+## My approach: measurement first, markup second
+
+When I work on a Nepali business website, schema comes after the measurement is in place — never before. That means Google Search Console is set up, the site's real search performance is visible, and we know which pages actually get impressions. Only then does it make sense to add markup, because only then can we see whether it changed anything.
+
+The second principle is developer and SEO in one person. Most schema problems I see on Nepali sites are not SEO problems — they are code problems: a plugin generating broken JSON, a template that puts the same markup on every page, a homepage block that lists services the business stopped offering two years ago. Because I build the sites I optimize, the markup matches the code, and the code matches the business.
+
+The third is no spammy shortcuts. There is a cottage industry of "schema services" that will sell you hundreds of markup types, fake review blocks, and keyword-stuffed descriptions. That is the fastest way to lose the rich results you already have. One accurate LocalBusiness block beats fifty dishonest ones.
+
+If you want that kind of work done on your site — measurement first, clean code, honest markup — that is what I do. Start at my [SEO services page](/seo-expert-in-nepal), where you can see how I work and what I have actually delivered, including growing a client ecommerce site from near-zero visibility to **265K Google Search impressions and 6.76K clicks in 8 months**.
+
+## FAQs
+
+### Do I need schema markup if I already have a Google Business Profile?
+
+Yes — they do different jobs. Your Google Business Profile is what shows on Maps and in the local pack. Schema is what confirms the same facts on your own website, in a format Google can read with certainty. Businesses that keep both consistent tend to have fewer problems with wrong hours or mismatched details showing in search. One without the other is incomplete: a profile with no website backing it up, or a website Google cannot parse, both leave value on the table.
+
+### Will schema markup improve my Google ranking?
+
+Not directly, and anyone who promises a ranking boost from schema alone is overselling it. Google has said structured data is not a direct ranking factor. What it does is make you eligible for rich results, which can improve your click-through rate — and a higher click-through rate on a listing that already ranks is genuinely valuable. Think of schema as removing a handicap, not adding a boost.
+
+### What happens if my schema has errors?
+
+Google will ignore the broken part and use the rest — or, if the errors are serious, ignore the whole block. Errors do not penalize your site, but they do waste the effort. That is why testing matters: run every page through the Rich Results Test after you add markup, and re-test whenever you change hours, prices, or services. A five-minute check catches problems that could sit unnoticed for months.
+
+### Can I add schema to a Facebook page or Instagram profile instead?
+
+No. Schema markup lives on a website you control, in the page's code. Facebook and Instagram do not let you add it. If your business exists only on social media, schema is one more reason to build a simple website — even a one-page site with your name, address, hours, and services is enough to carry the markup and give Google something to work with.
+
+### How often should I update my schema?
+
+Whenever the facts change. New phone number, changed hours for a festival season, a moved location, a new service, a closed day — update the markup the same day you update the website and your Google Business Profile. Stale schema is worse than no schema, because it actively tells Google something wrong. Make it part of your routine: whenever you change a business detail anywhere, change it in all three places — website, profile, and schema.
+
+### Is it worth paying an agency to add schema markup?
+
+For a single-location business, this is a small job, not a project. A competent developer can add a LocalBusiness block in under an hour, and many SEO plugins generate a decent starting version for free. What is worth paying for is the audit around it: checking that your name, address, and phone are consistent everywhere, that your profile matches your site, and that your markup reflects reality. If an agency quotes a large fee for schema alone, ask exactly what is included — and get a second quote.
+
+### Should every page on my site have schema?
+
+No. Your homepage carries the LocalBusiness block. Individual pages get schema only when it fits: a services page can carry the relevant service details, a blog post can carry Article schema, and a page with a genuine FAQ section can carry FAQPage schema. Copying the same LocalBusiness block onto every page is a common mistake — it adds nothing and can confuse Google about which page represents your business.
+
+### What is the difference between JSON-LD, Microdata, and RDFa?
+
+They are three ways of writing the same information. JSON-LD is a separate block of code in the page header; Microdata and RDFa mix the labels into the visible HTML. Google recommends JSON-LD because it is the easiest to add, the easiest to maintain, and the least likely to break when you redesign the site. For a local business, there is no reason to use anything else.
+
+## Final recommendation
+
+If you are a Nepali local business with a website, add LocalBusiness schema this week. It is free, it takes an afternoon, and it is one of the few technical tasks where a small business can be exactly as good as a big one. Start with the homepage, use the most specific type for your business, match your Google Business Profile exactly, and validate with the Rich Results Test before you call it done.
+
+Do not stop there, though. Schema is a finishing touch, not a foundation. If your site is slow on mobile, fix that first — most Nepali customers will find you on a phone, and [Core Web Vitals and site speed](/blog/core-web-vitals-site-speed-nepal-mobile) matter more than markup. If your content is thin, build the pages your customers actually search for. And if your internal links are a mess, [fix your internal linking](/blog/internal-linking-nepal-small-websites) so Google can actually find the pages you just marked up.
+
+## Bottom line
+
+Schema markup tells Google, in its own language, what your business is, where it is, and when it is open. For a Nepali local business, that clarity is worth having: it makes you eligible for rich results, removes confusion with same-named competitors, and strengthens the match between your website and your Google Business Profile. Add one accurate LocalBusiness block to your homepage, keep it in sync with reality, and test it. That is the whole job — and it is worth doing properly.
+
+If you would like help with this or with the rest of your site's SEO — the technical fixes, the content, and the measurement to prove it worked — see how I work on my [SEO services page](/seo-expert-in-nepal) or get in touch through the contact links on the [homepage](https://www.samratneupane.com.np/).
